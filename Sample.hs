@@ -17,7 +17,7 @@ main = do
 
   putStrLn ""
 
-  let twoWeeksBeforeThat = timeSince aWeekAgo 1 Fortnight Ago
+  let twoWeeksBeforeThat = timeSince aWeekAgo 1 Fortnight BeforeThat
       aBitFromTomorrow   = timeSince tomorrow 3 Seconds FromThat
 
   putStrLn $ "A fortnight before a week ago was " ++ formatting twoWeeksBeforeThat
