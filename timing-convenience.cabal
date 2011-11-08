@@ -50,7 +50,7 @@ Library
                       ,Data.Time.Convenience.Calculators
   
   -- Packages needed in order to build this package.
-  Build-depends:       time
+  Build-depends:       time, base
   
   -- Modules not exported by this package.
   -- Other-modules:       

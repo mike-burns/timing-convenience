@@ -15,4 +15,12 @@ main = do
   putStrLn $ "A bit ago was           " ++ formatting aTickAgo
   putStrLn $ "Tomorrow will be        " ++ formatting tomorrow
 
+  putStrLn ""
+
+  let twoWeeksBeforeThat = timeSince aWeekAgo 1 Fortnight Ago
+      aBitFromTomorrow   = timeSince tomorrow 3 Seconds FromThat
+
+  putStrLn $ "A fortnight before a week ago was " ++ formatting twoWeeksBeforeThat
+  putStrLn $ "A bit after tomorrow will be      " ++ formatting aBitFromTomorrow
+
 formatting = formatTime defaultTimeLocale "%c %T"

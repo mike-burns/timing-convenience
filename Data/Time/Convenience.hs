@@ -1,5 +1,6 @@
 module Data.Time.Convenience (
  timeFor
+,timeSince
 ,module Data.Time.Convenience.Data
 ) where
 
@@ -9,8 +10,13 @@ import Data.Time.Convenience.Data
 import Data.Time.Convenience.Calculators
 
 timeFor :: NominalDiffTime -> Unit -> Direction -> IO UTCTime
-timeFor n unit direction =
-  addUTCTime ((calculator unit) n direction) <$> getCurrentTime
+timeFor n unit direction = do
+  currentTime <- getCurrentTime
+  return $ timeSince currentTime n unit direction
+
+timeSince :: UTCTime -> NominalDiffTime -> Unit -> Direction -> UTCTime
+timeSince base n unit direction =
+  addUTCTime ((calculator unit) n direction) base
 
 calculator :: (Num i) => Unit -> (i -> Direction -> i)
 calculator Second = seconds

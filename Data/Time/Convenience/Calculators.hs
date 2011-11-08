@@ -12,6 +12,7 @@ import Data.Time.Convenience.Data
 seconds :: (Num i) => i -> Direction -> i
 seconds n Ago = negate n
 seconds n FromNow = n
+seconds n FromThat = n
 
 minutes :: (Num i) => i -> Direction -> i
 minutes n direction = (seconds n direction) * 60

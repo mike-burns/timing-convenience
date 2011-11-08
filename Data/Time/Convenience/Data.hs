@@ -12,5 +12,5 @@ data Unit =
   | Fortnight | Fortnights
   deriving (Eq, Show, Ord)
 
-data Direction = Ago | FromNow
+data Direction = Ago | FromNow | FromThat
   deriving (Eq, Show, Ord)
