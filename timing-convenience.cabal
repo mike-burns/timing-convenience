@@ -13,7 +13,9 @@ Version:             0.1
 Synopsis:            Convenient functions for getting times.
 
 -- A longer description of the package.
--- Description:         
+Description:         Inspired by Rails' ActiveSupport, this package provides
+                     nice looking convenience functions for getting a time and
+                     date, offset from today.
 
 -- The license under which the package is released.
 License:             BSD3
@@ -40,8 +42,11 @@ Build-type:          Simple
 Extra-source-files:  Sample.hs, README.md
 
 -- Constraint on the version of Cabal needed to build this package.
-Cabal-version:       >=1.2
+Cabal-version:       >=1.6
 
+source-repository head
+  type: git
+  location: git://github.com/mike-burns/timing-convenience.git
 
 Library
   -- Modules exported by the library.
@@ -50,7 +55,7 @@ Library
                       ,Data.Time.Convenience.Calculators
   
   -- Packages needed in order to build this package.
-  Build-depends:       time, base
+  Build-depends:       time, base >= 4.0 && < 5.0
   
   -- Modules not exported by this package.
   -- Other-modules:       
